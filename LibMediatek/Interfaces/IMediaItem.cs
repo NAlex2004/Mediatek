@@ -4,7 +4,8 @@ namespace LibMediatek.Interfaces
 {
 	public interface IMediaItem
 	{
-		string Title { get;}
+	    int? Id { get; }
+		string Title { get; }
 		string Author { get; }
 	    bool Open();
 	}
