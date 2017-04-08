@@ -9,7 +9,7 @@ namespace LibMediatek.Interfaces
         void Clear();
         void Add(IMediaItem item);
         bool Remove(IMediaItem item);
-        /// some kind of update
+        // some kind of update
         bool Replace(IMediaItem oldItem, IMediaItem newItem);
     }
 }
