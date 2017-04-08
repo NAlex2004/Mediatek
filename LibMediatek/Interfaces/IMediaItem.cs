@@ -6,6 +6,7 @@ namespace LibMediatek.Interfaces
 	{
 		string Title { get;}
 		string Author { get; }
+	    bool Open();
 	}
 }
 
