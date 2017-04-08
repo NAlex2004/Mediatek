@@ -1,4 +1,5 @@
-﻿using LibMediatek.Interfaces;
+﻿using System.Collections.Generic;
+using LibMediatek.Interfaces;
 
 namespace LibMediatek.Classes
 {
@@ -11,6 +12,7 @@ namespace LibMediatek.Classes
 		{
 		    Title = title;
 		    Author = author;
+		    List<int> list;
 		}
 
 	    public abstract bool Open();
