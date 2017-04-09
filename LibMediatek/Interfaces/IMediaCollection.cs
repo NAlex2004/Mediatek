@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace LibMediatek.Interfaces
 {
@@ -6,5 +7,6 @@ namespace LibMediatek.Interfaces
     {
         IMediaItem this[int index] { get; }
         bool MovePrevious();
+        IEnumerable<T> Find(Func<T, bool> searchFunc);
     }
 }

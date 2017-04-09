@@ -34,6 +34,8 @@
   <ItemGroup>
     <Compile Include="Classes\Collections\Disk.cs" />
     <Compile Include="Classes\Collections\MediaCollection.cs" />
+    <Compile Include="Classes\Factories\DiskCreator.cs" />
+    <Compile Include="Classes\Factories\DiskFactory.cs" />
     <Compile Include="Classes\Items\MediaItem.cs" />
     <Compile Include="Classes\Items\MusicTrack.cs" />
     <Compile Include="Classes\Items\MusicTrackReference.cs" />

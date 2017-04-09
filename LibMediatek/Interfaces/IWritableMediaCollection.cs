@@ -5,5 +5,6 @@
         void Add(T item);
         bool Remove(T item);
         bool Replace(T oldItem, T newItem);
+        void Clear();
     }
 }
