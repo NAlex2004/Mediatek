@@ -6,18 +6,18 @@ namespace LibMediatek.Classes.Factories
 {
     public class DiskCreator : DiskFactory
     {
-        private IMediaRepository<MusicTrack> _musicRepo;
-        private IMediaRepository<Photo> _photoRepo;
+        private readonly MusicTrack[] _musicTracks;
+        private readonly Photo[] _photoes;
 
-        public DiskCreator(IMediaRepository<MusicTrack> musicRepo, IMediaRepository<Photo> photoRepo)
+        public DiskCreator(MusicTrack[] musicTracks, Photo[] photoes)
         {
-            _photoRepo = photoRepo;
-            _musicRepo = musicRepo;
+            _musicTracks = musicTracks;
+            _photoes = photoes;
         }
 
         public override IMediaCollection<MusicTrack> CreateMusicTracks()
         {
-            throw new System.NotImplementedException();
+            return new MusicArray(_musicTracks);
         }
 
         public override IMediaCollection<Photo> CreateImages()
