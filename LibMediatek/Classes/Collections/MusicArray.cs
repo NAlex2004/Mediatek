@@ -1,9 +1,14 @@
 ﻿using LibMediatek.Classes.Items;
+using LibMediatek.Classes.Repositories;
+using LibMediatek.Interfaces;
 
 namespace LibMediatek.Classes.Collections
 {
-    public class MusicArray
+    public class MusicArray: MediaCollection<MusicTrack>
     {
-        MusicTrack[]
+        public MusicArray(MusicTrack[] tracks)
+        {
+            Repository = new ArrayRepository<MusicTrack>(tracks);
+        }
     }
 }

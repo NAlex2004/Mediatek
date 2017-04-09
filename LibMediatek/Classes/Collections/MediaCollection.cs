@@ -11,6 +11,10 @@ namespace LibMediatek.Classes.Collections
         protected IMediaRepository<T> Repository;
         private int _index = -1;
 
+        protected MediaCollection()
+        {
+        }
+
         public virtual T this[string title]
         {
             get

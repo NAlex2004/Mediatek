@@ -44,6 +44,7 @@
     <Compile Include="Classes\Items\PhotoReference.cs" />
     <Compile Include="Classes\Items\Video.cs" />
     <Compile Include="Classes\Items\VideoReference.cs" />
+    <Compile Include="Classes\Repositories\ArrayRepository.cs" />
     <Compile Include="Interfaces\IMediaCollection.cs" />
     <Compile Include="Interfaces\IMediaRepository.cs" />
     <Compile Include="Interfaces\IWritableMediaCollection.cs" />
