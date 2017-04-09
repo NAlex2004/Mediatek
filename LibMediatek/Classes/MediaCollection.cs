@@ -1,32 +1,17 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using LibMediatek.Interfaces;
 
 namespace LibMediatek.Classes
 {
-    public abstract class MediaCollection
+    public class MediaCollection : IMediaCollection
     {
         protected IMediaRepository Repository;
-//        IMediaItem this[int index] { get; }
-//        IMediaItem this[string title] { get; }
+        private int _index = -1;
 
-        /// <summary>
-        /// Get and set item by ID
-        /// </summary>
-        /// <param name="id"></param>
-        public IMediaItem this[int? id]
-        {
-            get
-            {
-
-            }
-
-            set
-            {
-
-            }
-        }
-
-        public IMediaItem this[string title]
+        public virtual IMediaItem this[string title]
         {
             get
             {
@@ -35,6 +20,64 @@ namespace LibMediatek.Classes
                     return items.FirstOrDefault();
                 return null;
             }
+        }
+
+        public IEnumerator<IMediaItem> GetEnumerator()
+        {
+            return Repository.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        public void Dispose()
+        {
+            IDisposable rep = Repository as IDisposable;
+            if (rep != null)
+                rep.Dispose();
+        }
+
+        public bool MoveNext()
+        {
+            return (++_index < Repository.Count());
+        }
+
+        public void Reset()
+        {
+            _index = -1;
+        }
+
+        public IMediaItem Current
+        {
+            get { return Repository[_index]; }
+        }
+
+        object IEnumerator.Current
+        {
+            get { return Current; }
+        }
+
+        IMediaItem IMediaCollection.this[int index]
+        {
+            get { return Repository[index]; }
+        }
+        public void Add(IMediaItem item)
+        {
+            Repository.Add(item);
+        }
+
+        public bool Remove(IMediaItem item)
+        {
+            return Repository.Remove(item);
+        }
+
+        public bool MovePrevious()
+        {
+            if (_index >= 0)
+                _index--;
+            return (_index >= 0);
         }
     }
 }

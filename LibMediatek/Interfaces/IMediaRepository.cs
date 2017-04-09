@@ -5,6 +5,7 @@ namespace LibMediatek.Interfaces
 {
     public interface IMediaRepository : IEnumerable<IMediaItem>
     {
+        IMediaItem this[int index] { get; }
         void Clear();
         void Add(IMediaItem item);
         bool Remove(IMediaItem item);
