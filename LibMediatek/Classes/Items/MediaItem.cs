@@ -1,7 +1,6 @@
-﻿using System;
-using LibMediatek.Interfaces;
+﻿using LibMediatek.Interfaces;
 
-namespace LibMediatek.Classes
+namespace LibMediatek.Classes.Items
 {
 	public abstract class MediaItem : IMediaItem, ISizedItem
 	{

@@ -1,6 +1,6 @@
 ﻿using LibMediatek.Interfaces;
 
-namespace LibMediatek.Classes
+namespace LibMediatek.Classes.Collections
 {
     public class Disk
     {

@@ -6,11 +6,11 @@ namespace LibMediatek.Classes.Items
 {
     public class MusicTrack : MediaItem
     {
-        protected byte[] _track;
+        protected byte[] Track;
 
         public MusicTrack(string title, string author, byte[] track) : base(title, author)
         {
-            _track = track;
+            Track = track;
         }
 
         public override bool Open()
