@@ -7,17 +7,16 @@ using LibMediatek.Interfaces;
 
 namespace LibMediatek.Classes.Collections
 {
-    public class MusicArray: IMediaCollection<MusicTrack>
+    public class MusicArray: MediaCollection<MusicTrack>
     {
         protected MusicTrack[] Tracks;
-        protected int Index = -1;
 
         public MusicArray(MusicTrack[] tracks)
         {
             Tracks = tracks;
         }
 
-        public IEnumerator<MusicTrack> GetEnumerator()
+        public override IEnumerator<MusicTrack> GetEnumerator()
         {
             foreach (MusicTrack musicTrack in Tracks)
             {
@@ -25,58 +24,22 @@ namespace LibMediatek.Classes.Collections
             }
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
-
-        public void Dispose()
+        public override void Dispose()
         {
 
         }
 
-        public bool MoveNext()
-        {
-            if (Index < Tracks.Length - 1)
-            {
-                Index++;
-                return true;
-            }
-
-            return false;
-        }
-
-        public void Reset()
-        {
-            Index = -1;
-        }
-
-        public MusicTrack Current
+        public override MusicTrack Current
         {
             get { return Tracks[Index]; }
         }
 
-        object IEnumerator.Current
-        {
-            get { return Current; }
-        }
-
-        public IMediaItem this[int index]
+        public override MusicTrack this[int index]
         {
             get { return Tracks[index]; }
         }
 
-        public bool MovePrevious()
-        {
-            if (Index >= 0)
-            {
-                Index--;
-                return true;
-            }
-            return false;
-        }
-
-        public IEnumerable<MusicTrack> Find(Func<MusicTrack, bool> searchFunc)
+        public override IEnumerable<MusicTrack> Find(Func<MusicTrack, bool> searchFunc)
         {
             return Tracks.Where(searchFunc);
         }

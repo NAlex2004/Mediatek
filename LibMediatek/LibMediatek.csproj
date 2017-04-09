@@ -33,6 +33,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Collections\Disk.cs" />
+    <Compile Include="Classes\Collections\MediaCollection.cs" />
     <Compile Include="Classes\Collections\MusicArray.cs" />
     <Compile Include="Classes\Factories\DiskCreator.cs" />
     <Compile Include="Classes\Factories\DiskFactory.cs" />

@@ -25,5 +25,5 @@ namespace LibMediatek.Classes.Items
             Console.WriteLine("Photo: {0}\n Author: {1}\n", Title, Author);
             return true;
         }
-
+    }
 }

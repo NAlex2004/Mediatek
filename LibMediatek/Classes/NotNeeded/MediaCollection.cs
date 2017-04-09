@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using LibMediatek.Interfaces;
 
-namespace LibMediatek.Classes.Collections
+namespace LibMediatek.Classes.NotNeeded
 {
     public class MediaCollection<T> : IMediaCollection<T> where T: class, IMediaItem
     {
@@ -63,7 +63,7 @@ namespace LibMediatek.Classes.Collections
             get { return Current; }
         }
 
-        IMediaItem IMediaCollection<T>.this[int index]
+        T IMediaCollection<T>.this[int index]
         {
             get { return Repository[index]; }
         }
