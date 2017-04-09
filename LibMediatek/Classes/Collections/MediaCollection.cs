@@ -6,12 +6,12 @@ using LibMediatek.Interfaces;
 
 namespace LibMediatek.Classes.Collections
 {
-    public class MediaCollection : IMediaCollection
+    public class MediaCollection<T> : IMediaCollection<T> where T: class, IMediaItem
     {
-        protected IMediaRepository Repository;
+        protected IMediaRepository<T> Repository;
         private int _index = -1;
 
-        public virtual IMediaItem this[string title]
+        public virtual T this[string title]
         {
             get
             {
@@ -22,7 +22,7 @@ namespace LibMediatek.Classes.Collections
             }
         }
 
-        public IEnumerator<IMediaItem> GetEnumerator()
+        public IEnumerator<T> GetEnumerator()
         {
             return Repository.GetEnumerator();
         }
@@ -49,7 +49,7 @@ namespace LibMediatek.Classes.Collections
             _index = -1;
         }
 
-        public IMediaItem Current
+        public T Current
         {
             get { return Repository[_index]; }
         }
@@ -59,16 +59,16 @@ namespace LibMediatek.Classes.Collections
             get { return Current; }
         }
 
-        IMediaItem IMediaCollection.this[int index]
+        IMediaItem IMediaCollection<T>.this[int index]
         {
             get { return Repository[index]; }
         }
-        public void Add(IMediaItem item)
+        public void Add(T item)
         {
             Repository.Add(item);
         }
 
-        public bool Remove(IMediaItem item)
+        public bool Remove(T item)
         {
             return Repository.Remove(item);
         }
@@ -78,6 +78,11 @@ namespace LibMediatek.Classes.Collections
             if (_index >= 0)
                 _index--;
             return (_index >= 0);
+        }
+
+        public IEnumerable<T> Find(Func<T, bool> searchFunc)
+        {
+            return Repository.Find(searchFunc);
         }
     }
 }
