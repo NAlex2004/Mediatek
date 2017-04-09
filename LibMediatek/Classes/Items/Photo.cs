@@ -7,7 +7,7 @@ namespace LibMediatek.Classes.Items
 {
     public class Photo : MediaItem
     {
-        private Image _image;
+        protected Image _image;
 
 //        public virtual Image Image
 //        {
