@@ -9,7 +9,7 @@ using LibMediatek.Classes.Collections;
 
 namespace LibMediatek.Classes.Factories
 {
-    class SelectionFactory: MediaFactory
+    public class SelectionFactory: MediaFactory
     {
         private readonly MusicTrack[] _musicTracks;
         private readonly Photo[] _photoes;

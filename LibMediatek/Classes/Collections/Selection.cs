@@ -10,15 +10,12 @@ using LibMediatek.Classes.Factories;
 
 namespace LibMediatek.Classes.Collections
 {
-    public class Selection
+    /// <summary>
+    /// Disk in which items are allowed to be replaced or changed, if created with SelectionFactory
+    /// If using DiskFactory it will be just Disk.
+    /// </summary>
+    public class Selection: Disk
     {
-        public IMediaCollection<MusicTrack> MusicTracks { get; protected set; }
-        public IMediaCollection<Photo> Images { get; protected set; }
-
-        public Selection(MediaFactory factory)
-        {
-            MusicTracks = factory.CreateMusicTracks();
-            Images = factory.CreateImages();
-        }
+        public Selection(MediaFactory factory): base(factory) {}
     }
 }

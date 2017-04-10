@@ -15,7 +15,7 @@ namespace LibMediatek.Classes.Items
 
         public override bool Open()
         {
-            Console.WriteLine("Music Track: {0}\n Author: {1}\n", Title, Author);
+            Console.WriteLine("Music Track: {0}\nAuthor: {1}\n", Title, Author);
             return true;
         }
     }

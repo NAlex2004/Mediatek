@@ -22,7 +22,7 @@ namespace LibMediatek.Classes.Items
 
         public override bool Open()
         {
-            Console.WriteLine("Photo: {0}\n Author: {1}\n", Title, Author);
+            Console.WriteLine("Photo: {0}\nAuthor: {1}\n", Title, Author);
             return true;
         }
     }

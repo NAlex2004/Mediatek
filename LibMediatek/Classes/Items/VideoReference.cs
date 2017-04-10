@@ -14,7 +14,7 @@ namespace LibMediatek.Classes.Items
 
         public override bool Open()
         {
-            Console.WriteLine("Video: {0}\n Author: {1}\n, Location: {2}", Title, Author, Location);
+            Console.WriteLine("Video: {0}\nAuthor: {1}\nLocation: {2}\n", Title, Author, Location);
             return true;
         }
     }

@@ -15,7 +15,7 @@ namespace LibMediatek.Classes.Items
 
         public override bool Open()
         {
-            Console.WriteLine("Photo: {0}\n Author: {1}\n Location: {2}\n", Title, Author, Location);
+            Console.WriteLine("Photo: {0}\nAuthor: {1}\nLocation: {2}\n", Title, Author, Location);
             return true;
         }
     }
