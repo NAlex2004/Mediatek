@@ -1,42 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using LibMediatek.Interfaces;
+﻿using LibMediatek.Interfaces;
 using LibMediatek.Classes.Items;
-using LibMediatek.Classes;
 using LibMediatek.Classes.Collections;
 
 namespace LibMediatek.Classes.Factories
 {
-    public class ListMediaFactory: MediaFactory
+    public class ListMediaFactory: WritableMediaFactory
     {
-        public override IMediaCollection<MusicTrack> CreateMusicTracks()
+        public override IWritableMediaCollection<MusicTrack> CreateMusicTracks()
         {
             return new MediaList<MusicTrack>();
         }
 
-        public override IMediaCollection<MusicTrackReference> CreateMusicTrackReferences()
+        public override IWritableMediaCollection<MusicTrackReference> CreateMusicTrackReferences()
         {
             return new MediaList<MusicTrackReference>();
         }
 
-        public override IMediaCollection<Photo> CreateImages()
+        public override IWritableMediaCollection<Photo> CreateImages()
         {
             return new MediaList<Photo>();
         }
 
-        public override IMediaCollection<PhotoReference> CreateImageReferences()
+        public override IWritableMediaCollection<PhotoReference> CreateImageReferences()
         {
             return new MediaList<PhotoReference>();
         }
 
-        public override IMediaCollection<Video> CreateVideos()
+        public override IWritableMediaCollection<Video> CreateVideos()
         {
             return new MediaList<Video>();
         }
 
-        public override IMediaCollection<VideoReference> CreateVideoReferences()
+        public override IWritableMediaCollection<VideoReference> CreateVideoReferences()
         {
             return new MediaList<VideoReference>();
         }

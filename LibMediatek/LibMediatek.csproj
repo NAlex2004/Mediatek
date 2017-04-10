@@ -45,6 +45,7 @@
     <Compile Include="Classes\Factories\ListMediaFactory.cs" />
     <Compile Include="Classes\Factories\MediaFactory.cs" />
     <Compile Include="Classes\Factories\SelectionFactory.cs" />
+    <Compile Include="Classes\Factories\WritableMediaFactory.cs" />
     <Compile Include="Classes\Items\MediaItem.cs" />
     <Compile Include="Classes\Items\MusicTrack.cs" />
     <Compile Include="Classes\Items\MusicTrackReference.cs" />

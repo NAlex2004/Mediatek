@@ -9,10 +9,10 @@ namespace LibMediatek.Classes.Collections
         public IWritableMediaCollection<VideoReference> VideoReferences { get; protected set; }
         public IWritableMediaCollection<PhotoReference> ImageReferences { get; protected set; }
 
-        public Happening(MediaFactory factory) : base(factory)
+        public Happening(WritableMediaFactory factory) : base(factory)
         {
-            VideoReferences = factory.CreateVideoReferences() as IWritableMediaCollection<VideoReference>;
-            ImageReferences = factory.CreateImageReferences() as IWritableMediaCollection<PhotoReference>;
+            VideoReferences = factory.CreateVideoReferences();
+            ImageReferences = factory.CreateImageReferences();
         }
     }
 }

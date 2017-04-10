@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using LibMediatek.Interfaces;
-using LibMediatek.Classes;
-using LibMediatek.Classes.Collections;
-using LibMediatek.Classes.Items;
-using LibMediatek.Classes.Factories;
+﻿using LibMediatek.Classes.Factories;
 
 namespace LibMediatek.Classes.Collections
 {
