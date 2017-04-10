@@ -72,6 +72,17 @@ namespace LibMediatek.Classes.Collections
             Items[index] = newItem;
         }
 
+        /// <summary>
+        /// Exchange elements. 
+        /// Implemented here, not in interface, because for example in database this operation has no sence
+        /// </summary>
+        public virtual void Exchange(int index1, int index2)
+        {
+            T temp = Items[index1];
+            Items[index1] = Items[index2];
+            Items[index2] = temp;
+        }
+
         public override IEnumerable<T> Find(Func<T, bool> searchFunc)
         {
             return Items.Where(searchFunc);

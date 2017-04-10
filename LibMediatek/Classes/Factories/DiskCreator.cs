@@ -22,7 +22,7 @@ namespace LibMediatek.Classes.Factories
 
         public override IMediaCollection<Photo> CreateImages()
         {
-            throw new System.NotImplementedException();
+            return new MediaArray<Photo>(_photoes);
         }
     }
 }
