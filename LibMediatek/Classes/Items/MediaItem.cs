@@ -22,6 +22,17 @@ namespace LibMediatek.Classes.Items
 			return string.Format("Title: {0}\nAuthor: {1}\n", Title, Author);
 		}
 
+		public override bool Equals(object obj)
+		{
+			MediaItem item = obj as MediaItem;
+			if (item != null)
+			{
+				return (Title == item.Title && Author == item.Author && Id == item.Id);
+			}
+
+			return false;
+		}
+
 		public long Size { get; protected set; }
 	}
 }
