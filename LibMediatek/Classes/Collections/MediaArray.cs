@@ -4,21 +4,22 @@ using System.Collections.Generic;
 using System.Linq;
 using LibMediatek.Classes.Items;
 using LibMediatek.Interfaces;
+using LibMediatek.Classes.Collections.Abstract;
 
 namespace LibMediatek.Classes.Collections
 {
-    public class MusicArray: MediaCollection<MusicTrack>
+    public class MediaArray<T>: MediaCollection<T> where T: IMediaItem
     {
-        protected MusicTrack[] Tracks;
+        protected T[] Tracks;
 
-        public MusicArray(MusicTrack[] tracks)
+        public MediaArray(T[] tracks)
         {
             Tracks = tracks;
         }
 
-        public override IEnumerator<MusicTrack> GetEnumerator()
+        public override IEnumerator<T> GetEnumerator()
         {
-            foreach (MusicTrack musicTrack in Tracks)
+            foreach (T musicTrack in Tracks)
             {
                 yield return musicTrack;
             }
@@ -29,17 +30,17 @@ namespace LibMediatek.Classes.Collections
 
         }
 
-        public override MusicTrack Current
+        public override T Current
         {
             get { return Tracks[Index]; }
         }
 
-        public override MusicTrack this[int index]
+        public override T this[int index]
         {
             get { return Tracks[index]; }
         }
 
-        public override IEnumerable<MusicTrack> Find(Func<MusicTrack, bool> searchFunc)
+        public override IEnumerable<T> Find(Func<T, bool> searchFunc)
         {
             return Tracks.Where(searchFunc);
         }

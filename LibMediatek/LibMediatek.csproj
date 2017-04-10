@@ -33,9 +33,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Collections\Disk.cs" />
-    <Compile Include="Classes\Collections\MediaCollection.cs" />
-    <Compile Include="Classes\Collections\MusicArray.cs" />
-    <Compile Include="Classes\Collections\WritableMediaCollection.cs" />
+    <Compile Include="Classes\Collections\Abstract\MediaCollection.cs" />
+    <Compile Include="Classes\Collections\MediaList.cs" />
+    <Compile Include="Classes\Collections\MediaArray.cs" />
+    <Compile Include="Classes\Collections\Abstract\WritableMediaCollection.cs" />
     <Compile Include="Classes\Factories\DiskCreator.cs" />
     <Compile Include="Classes\Factories\DiskFactory.cs" />
     <Compile Include="Classes\Items\MediaItem.cs" />

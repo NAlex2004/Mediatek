@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using LibMediatek.Interfaces;
 
-namespace LibMediatek.Classes.Collections
+namespace LibMediatek.Classes.Collections.Abstract
 {
     public abstract class WritableMediaCollection<T> : MediaCollection<T>, IWritableMediaCollection<T> where T: IMediaItem
     {

@@ -17,7 +17,7 @@ namespace LibMediatek.Classes.Factories
 
         public override IMediaCollection<MusicTrack> CreateMusicTracks()
         {
-            return new MusicArray(_musicTracks);
+            return new MediaArray<MusicTrack>(_musicTracks);
         }
 
         public override IMediaCollection<Photo> CreateImages()

@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using LibMediatek.Interfaces;
 
-namespace LibMediatek.Classes.Collections
+namespace LibMediatek.Classes.Collections.Abstract
 {
     public abstract class MediaCollection<T> : IMediaCollection<T> where T: IMediaItem
     {
         protected int Index = -1;
-        public virtual int Count { get; protected set; }
+        public virtual int CountItems { get; protected set; }
 
         public abstract IEnumerator<T> GetEnumerator();
 
@@ -21,7 +21,7 @@ namespace LibMediatek.Classes.Collections
 
         public bool MoveNext()
         {
-            if (Index < Count - 1)
+            if (Index < CountItems - 1)
             {
                 Index++;
                 return true;
