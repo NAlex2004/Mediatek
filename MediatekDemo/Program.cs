@@ -19,7 +19,13 @@ namespace MediatekDemo
             Series series = new Series(sFact);
             series.Videos.Add(new Video("Video 1", "operator", new byte[1]));
             series.Videos[0] = new Video("Video 2", "No operator", new byte[1]);
-            Console.WriteLine(series.Videos[0].ToString());
+            Video vid = new Video("Video 3", "John", new byte[1]);
+            series.Videos.Add(new Video("Video 3", "John", new byte[1]));
+            series.Videos.Replace(vid, new Video("Video Replaced", "John Jack", new byte[1]));
+            foreach (Video video in series.Videos)
+            {
+                video.Open();
+            }
         }
 
         static void DiskAndSelectionDemo()
