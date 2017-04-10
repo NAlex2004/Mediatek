@@ -35,6 +35,7 @@
     <Compile Include="Classes\Collections\Disk.cs" />
     <Compile Include="Classes\Collections\MediaCollection.cs" />
     <Compile Include="Classes\Collections\MusicArray.cs" />
+    <Compile Include="Classes\Collections\WritableMediaCollection.cs" />
     <Compile Include="Classes\Factories\DiskCreator.cs" />
     <Compile Include="Classes\Factories\DiskFactory.cs" />
     <Compile Include="Classes\Items\MediaItem.cs" />
@@ -54,8 +55,5 @@
     <Compile Include="Interfaces\IReferencedItem.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Classes\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>

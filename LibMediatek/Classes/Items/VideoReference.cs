@@ -10,7 +10,7 @@ namespace LibMediatek.Classes.Items
             Location = videoUri;
         }
 
-        public Uri Location { get; }
+        public Uri Location { get; protected set; }
 
         public override bool Open()
         {
