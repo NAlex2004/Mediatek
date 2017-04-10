@@ -35,7 +35,7 @@ namespace LibMediatek.Classes.Collections.Abstract
             Index = -1;
         }
 
-        public abstract T Current { get; }
+        public abstract T Current { get; set; }
 
         object IEnumerator.Current
         {

@@ -19,7 +19,7 @@ namespace LibMediatek.Classes.Collections
             get { return _images; }
         }
 
-        public Disk(DiskFactory factory)
+        public Disk(MediaFactory factory)
         {
             _tracks = factory.CreateMusicTracks();
             _images = factory.CreateImages();

@@ -5,7 +5,7 @@ namespace LibMediatek.Interfaces
 {
     public interface IMediaCollection<out T> : IEnumerable<T>, IEnumerator<T> where T : IMediaItem
     {
-        T this[int index] { get; }
+        T this[int index] { get; set; }
         bool MovePrevious();
         IEnumerable<T> Find(Func<T, bool> searchFunc);
     }
