@@ -9,7 +9,7 @@ using LibMediatek.Classes.Collections;
 
 namespace LibMediatek.Classes.Factories
 {
-    class ListMediaFactory: MediaFactory
+    public class ListMediaFactory: MediaFactory
     {
         public override IMediaCollection<MusicTrack> CreateMusicTracks()
         {

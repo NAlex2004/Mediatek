@@ -11,6 +11,6 @@ namespace LibMediatek.Classes.Collections.Abstract
         public abstract void Add(T item);        
         public abstract bool Remove(T item);        
         public abstract bool Replace(T oldItem, T newItem); 
-        public abstract void Clear();        
+        public abstract void Clear();
     }
 }

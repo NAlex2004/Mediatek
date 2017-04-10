@@ -19,7 +19,7 @@ namespace LibMediatek.Classes.Items
 
 		public override string ToString()
 		{
-			return string.Format("Title: {0}\nAuthor: {1}\n");
+			return string.Format("Title: {0}\nAuthor: {1}\n", Title, Author);
 		}
 
 		public long Size { get; protected set; }

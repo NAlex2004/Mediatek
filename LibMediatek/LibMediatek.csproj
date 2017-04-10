@@ -38,6 +38,7 @@
     <Compile Include="Classes\Collections\MediaArray.cs" />
     <Compile Include="Classes\Collections\Abstract\WritableMediaCollection.cs" />
     <Compile Include="Classes\Collections\Selection.cs" />
+    <Compile Include="Classes\Collections\Series.cs" />
     <Compile Include="Classes\Collections\UpdatableMediaArray.cs" />
     <Compile Include="Classes\Factories\DiskFactory.cs" />
     <Compile Include="Classes\Factories\ListMediaFactory.cs" />
