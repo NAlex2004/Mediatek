@@ -37,10 +37,12 @@
     <Compile Include="Classes\Collections\MediaList.cs" />
     <Compile Include="Classes\Collections\MediaArray.cs" />
     <Compile Include="Classes\Collections\Abstract\WritableMediaCollection.cs" />
+    <Compile Include="Classes\Collections\Selection.cs" />
     <Compile Include="Classes\Collections\UpdatableMediaArray.cs" />
     <Compile Include="Classes\Factories\DiskFactory.cs" />
     <Compile Include="Classes\Factories\ListMediaFactory.cs" />
     <Compile Include="Classes\Factories\MediaFactory.cs" />
+    <Compile Include="Classes\Factories\SelectionFactory.cs" />
     <Compile Include="Classes\Items\MediaItem.cs" />
     <Compile Include="Classes\Items\MusicTrack.cs" />
     <Compile Include="Classes\Items\MusicTrackReference.cs" />
@@ -48,8 +50,6 @@
     <Compile Include="Classes\Items\PhotoReference.cs" />
     <Compile Include="Classes\Items\Video.cs" />
     <Compile Include="Classes\Items\VideoReference.cs" />
-    <Compile Include="Classes\NotNeeded\IMediaRepository.cs" />
-    <Compile Include="Classes\NotNeeded\MediaCollection.cs" />
     <Compile Include="Interfaces\IMediaCollection.cs" />
     <Compile Include="Interfaces\IWritableMediaCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

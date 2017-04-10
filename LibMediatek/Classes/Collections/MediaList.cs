@@ -64,7 +64,8 @@ namespace LibMediatek.Classes.Collections
 
         public override T this[int index]
         {
-            get { return Items[index]; }           
+            get { return Items[index]; }
+            set { Items[index] = value; }
         }
 
         public virtual void ReplaceAt(int index, T newItem)

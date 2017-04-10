@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace LibMediatek.Interfaces
 {
-    public interface IMediaCollection<out T> : IEnumerable<T>, IEnumerator<T> where T : IMediaItem
+    public interface IMediaCollection<T> : IEnumerable<T>, IEnumerator<T> where T : IMediaItem
     {
         T this[int index] { get; set; }
         bool MovePrevious();

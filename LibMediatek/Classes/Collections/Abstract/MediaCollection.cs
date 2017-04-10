@@ -35,14 +35,14 @@ namespace LibMediatek.Classes.Collections.Abstract
             Index = -1;
         }
 
-        public abstract T Current { get; set; }
+        public abstract T Current { get; }
 
         object IEnumerator.Current
         {
             get { return Current; }
         }
 
-        public abstract T this[int index] { get; }
+        public abstract T this[int index] { get; set; }
 
         public bool MovePrevious()
         {
