@@ -22,6 +22,7 @@ namespace LibMediatek.Classes.Items
 
         public override bool Open()
         {
+            Console.WriteLine("_____Photo opened:_____");
             Console.WriteLine("Photo: {0}\nAuthor: {1}\n", Title, Author);
             return true;
         }

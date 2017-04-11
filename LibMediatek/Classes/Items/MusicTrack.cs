@@ -15,6 +15,7 @@ namespace LibMediatek.Classes.Items
 
         public override bool Open()
         {
+            Console.WriteLine("_____Now playing:_____");
             Console.WriteLine("Music Track: {0}\nAuthor: {1}\n", Title, Author);
             return true;
         }

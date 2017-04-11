@@ -12,8 +12,14 @@ namespace LibMediatek.Classes.Items
 
         public Uri Location { get; protected set; }
 
+        public override string ToString()
+        {
+            return base.ToString() + "Location Uri: " + Location + Environment.NewLine;
+        }
+
         public override bool Open()
         {
+            Console.WriteLine("_____Now playing:_____");
             Console.WriteLine("Video: {0}\nAuthor: {1}\nLocation: {2}\n", Title, Author, Location);
             return true;
         }
