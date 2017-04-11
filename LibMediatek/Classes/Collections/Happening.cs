@@ -7,7 +7,7 @@ namespace LibMediatek.Classes.Collections
     /// <summary>
     /// changable, writable, images, videos and references
     /// </summary>
-    class Happening: Series
+    public class Happening: Series
     {
         public IWritableMediaCollection<VideoReference> VideoReferences { get; protected set; }
         public IWritableMediaCollection<PhotoReference> ImageReferences { get; protected set; }
