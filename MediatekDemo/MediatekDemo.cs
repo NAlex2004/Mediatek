@@ -24,12 +24,13 @@ namespace MediatekDemo
         {
             collection.Add(new Photo("Empty picture", "Bare Eye", new System.Drawing.Bitmap(1, 1)));
             collection.Add(new Photo("Some Photo", "google", new System.Drawing.Bitmap(1, 1)));
+            collection.Add(new PhotoReference("Empty reference", "google", new Uri("https://nothing.com/empty.jpg")));
         }
 
         static void AddVideoReferences(IWritableMediaCollection<VideoReference> collection)
         {
             collection.Add(new VideoReference("Video Ref #1", "Ref", new Uri("file://file.avi")));
-            collection.Add(new VideoReference("Video Ref #2", "Ref", new Uri("file://file2.avi")));
+            collection.Add(new VideoReference("Video Ref #2", "Ref", new Uri("file://file2.avi")));            
         }
 
         static void AddImageReferences(IWritableMediaCollection<PhotoReference> collection)
@@ -44,7 +45,6 @@ namespace MediatekDemo
             Series series = new Series(sFact);
             AddVideo(series.Videos);
             AddImages(series.Images);
-            AddImageReferences(series.Images);
             return series;
         }
 
@@ -147,6 +147,20 @@ namespace MediatekDemo
         public static void HappeningDemo()
         {
             Happening happen = CreateHappening();
+            
+            Console.WriteLine("================== Series ======================");
+
+            WriteMedia(happen.Videos);
+            WriteMedia(happen.Images);
+            WriteMedia(happen.ImageReferences);
+            WriteMedia(happen.VideoReferences);
+            Console.WriteLine();
+
+            Console.WriteLine("Write videos sorted by title:");
+
+            happen.Videos.OrderBy(x => x.Title).ForEach(x => Console.WriteLine(x.ToString()));
+            
+            Console.WriteLine("===============================================");
         }
     }
 }

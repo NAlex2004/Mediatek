@@ -24,13 +24,14 @@ namespace MediatekDemo
 
         static void Main(string[] args)
         {
-            //MediatekDemo.DiskDemo();
-            //AnyKey();
-            //MediatekDemo.SelectionDemo();
-            //AnyKey();
+            MediatekDemo.DiskDemo();
+            AnyKey();
+            MediatekDemo.SelectionDemo();
+            AnyKey();
             MediatekDemo.SeriesDemo();
             AnyKey();
             MediatekDemo.HappeningDemo();
+            Console.WriteLine("Any key to exit.");
             Console.ReadKey();
         }
     }
