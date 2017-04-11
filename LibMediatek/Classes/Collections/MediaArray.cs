@@ -40,8 +40,8 @@ namespace LibMediatek.Classes.Collections
 
         public override T this[int index]
         {
-            get { return Tracks[index]; }
-            set { }
+            get { return Tracks[index]; }        
+            set {}
         }
 
         public override IEnumerable<T> Find(Func<T, bool> searchFunc)

@@ -1,6 +1,7 @@
 ﻿using LibMediatek.Interfaces;
 using LibMediatek.Classes.Items;
 using LibMediatek.Classes.Factories;
+using LibMediatek.Classes.Collections.Abstract;
 
 namespace LibMediatek.Classes.Collections
 {
@@ -9,8 +10,8 @@ namespace LibMediatek.Classes.Collections
     /// </summary>
     public class Series
     {
-        public IWritableMediaCollection<Video> Videos { get; protected set; }
-        public IWritableMediaCollection<Photo> Images { get; protected set; }
+        public WritableMediaCollection<Video> Videos { get; protected set; }
+        public WritableMediaCollection<Photo> Images { get; protected set; }
 
         public Series(WritableMediaFactory factory)
         {

@@ -25,10 +25,12 @@ namespace LibMediatek.Classes.Collections
             {
                 return Tracks[index];
             }
+
             set
             {
                 Tracks[index] = value;
             }
         }
+
     }
 }

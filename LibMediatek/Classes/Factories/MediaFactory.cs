@@ -1,5 +1,6 @@
 ﻿using LibMediatek.Classes.Items;
 using LibMediatek.Interfaces;
+using LibMediatek.Classes.Collections.Abstract;
 
 namespace LibMediatek.Classes.Factories
 {
@@ -8,13 +9,13 @@ namespace LibMediatek.Classes.Factories
     /// </summary>
     public abstract class MediaFactory
     {
-        public abstract IMediaCollection<MusicTrack> CreateMusicTracks();
-        public abstract IMediaCollection<MusicTrackReference> CreateMusicTrackReferences();
+        public abstract MediaCollection<MusicTrack> CreateMusicTracks();
+        public abstract MediaCollection<MusicTrackReference> CreateMusicTrackReferences();
 
-        public abstract IMediaCollection<Photo> CreateImages();
-        public abstract IMediaCollection<PhotoReference> CreateImageReferences();
+        public abstract MediaCollection<Photo> CreateImages();
+        public abstract MediaCollection<PhotoReference> CreateImageReferences();
 
-        public abstract IMediaCollection<Video> CreateVideos();
-        public abstract IMediaCollection<VideoReference> CreateVideoReferences();
+        public abstract MediaCollection<Video> CreateVideos();
+        public abstract MediaCollection<VideoReference> CreateVideoReferences();
     }
 }

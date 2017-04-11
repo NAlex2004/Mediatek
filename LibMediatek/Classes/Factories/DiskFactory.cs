@@ -1,6 +1,7 @@
 ﻿using LibMediatek.Classes.Collections;
 using LibMediatek.Classes.Items;
 using LibMediatek.Interfaces;
+using LibMediatek.Classes.Collections.Abstract;
 
 namespace LibMediatek.Classes.Factories
 {
@@ -18,32 +19,32 @@ namespace LibMediatek.Classes.Factories
             _photoes = photoes;
         }
 
-        public override IMediaCollection<MusicTrack> CreateMusicTracks()
+        public override MediaCollection<MusicTrack> CreateMusicTracks()
         {
             return new MediaArray<MusicTrack>(_musicTracks);
         }
 
-        public override IMediaCollection<Photo> CreateImages()
+        public override MediaCollection<Photo> CreateImages()
         {
             return new MediaArray<Photo>(_photoes);
         }
 
-        public override IMediaCollection<MusicTrackReference> CreateMusicTrackReferences()
+        public override MediaCollection<MusicTrackReference> CreateMusicTrackReferences()
         {
             return null;
         }
 
-        public override IMediaCollection<PhotoReference> CreateImageReferences()
+        public override MediaCollection<PhotoReference> CreateImageReferences()
         {
             return null;
         }
 
-        public override IMediaCollection<Video> CreateVideos()
+        public override MediaCollection<Video> CreateVideos()
         {
             return null;
         }
 
-        public override IMediaCollection<VideoReference> CreateVideoReferences()
+        public override MediaCollection<VideoReference> CreateVideoReferences()
         {
             return null;
         }

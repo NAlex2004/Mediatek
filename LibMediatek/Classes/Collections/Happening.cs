@@ -1,6 +1,7 @@
 ﻿using LibMediatek.Interfaces;
 using LibMediatek.Classes.Items;
 using LibMediatek.Classes.Factories;
+using LibMediatek.Classes.Collections.Abstract;
 
 namespace LibMediatek.Classes.Collections
 {
@@ -9,8 +10,8 @@ namespace LibMediatek.Classes.Collections
     /// </summary>
     public class Happening: Series
     {
-        public IWritableMediaCollection<VideoReference> VideoReferences { get; protected set; }
-        public IWritableMediaCollection<PhotoReference> ImageReferences { get; protected set; }
+        public WritableMediaCollection<VideoReference> VideoReferences { get; protected set; }
+        public WritableMediaCollection<PhotoReference> ImageReferences { get; protected set; }
 
         public Happening(WritableMediaFactory factory) : base(factory)
         {

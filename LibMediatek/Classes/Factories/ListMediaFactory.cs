@@ -1,6 +1,7 @@
 ﻿using LibMediatek.Interfaces;
 using LibMediatek.Classes.Items;
 using LibMediatek.Classes.Collections;
+using LibMediatek.Classes.Collections.Abstract;
 
 namespace LibMediatek.Classes.Factories
 {
@@ -10,32 +11,32 @@ namespace LibMediatek.Classes.Factories
     /// </summary>
     public class ListMediaFactory: WritableMediaFactory
     {
-        public override IWritableMediaCollection<MusicTrack> CreateMusicTracks()
+        public override WritableMediaCollection<MusicTrack> CreateMusicTracks()
         {
             return new MediaList<MusicTrack>();
         }
 
-        public override IWritableMediaCollection<MusicTrackReference> CreateMusicTrackReferences()
+        public override WritableMediaCollection<MusicTrackReference> CreateMusicTrackReferences()
         {
             return new MediaList<MusicTrackReference>();
         }
 
-        public override IWritableMediaCollection<Photo> CreateImages()
+        public override WritableMediaCollection<Photo> CreateImages()
         {
             return new MediaList<Photo>();
         }
 
-        public override IWritableMediaCollection<PhotoReference> CreateImageReferences()
+        public override WritableMediaCollection<PhotoReference> CreateImageReferences()
         {
             return new MediaList<PhotoReference>();
         }
 
-        public override IWritableMediaCollection<Video> CreateVideos()
+        public override WritableMediaCollection<Video> CreateVideos()
         {
             return new MediaList<Video>();
         }
 
-        public override IWritableMediaCollection<VideoReference> CreateVideoReferences()
+        public override WritableMediaCollection<VideoReference> CreateVideoReferences()
         {
             return new MediaList<VideoReference>();
         }
