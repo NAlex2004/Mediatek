@@ -7,6 +7,10 @@ using LibMediatek.Interfaces;
 
 namespace LibMediatek.Classes.Collections
 {
+    /// <summary>
+    /// IList of IMediaItems.
+    /// If constructed with no parameters, List of T is created
+    /// </summary>
     public class MediaList<T> : WritableMediaCollection<T> where T: IMediaItem
     {
         protected IList<T> Items;

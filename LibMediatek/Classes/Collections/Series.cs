@@ -4,6 +4,9 @@ using LibMediatek.Classes.Factories;
 
 namespace LibMediatek.Classes.Collections
 {
+    /// <summary>
+    /// writable series 'collection'
+    /// </summary>
     public class Series
     {
         public IWritableMediaCollection<Video> Videos { get; protected set; }

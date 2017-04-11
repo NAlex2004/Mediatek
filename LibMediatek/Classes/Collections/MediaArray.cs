@@ -8,6 +8,9 @@ using LibMediatek.Classes.Collections.Abstract;
 
 namespace LibMediatek.Classes.Collections
 {
+    /// <summary>
+    /// array of IMediaItem(s), readonly
+    /// </summary>
     public class MediaArray<T>: MediaCollection<T> where T: IMediaItem
     {
         protected T[] Tracks;

@@ -4,6 +4,10 @@ using LibMediatek.Classes.Collections;
 
 namespace LibMediatek.Classes.Factories
 {
+    /// <summary>
+    /// Creates empty writable media collection
+    /// (MediaLis of T)
+    /// </summary>
     public class ListMediaFactory: WritableMediaFactory
     {
         public override IWritableMediaCollection<MusicTrack> CreateMusicTracks()

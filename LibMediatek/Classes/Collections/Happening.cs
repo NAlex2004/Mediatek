@@ -4,6 +4,9 @@ using LibMediatek.Classes.Factories;
 
 namespace LibMediatek.Classes.Collections
 {
+    /// <summary>
+    /// changable, writable, images, videos and references
+    /// </summary>
     class Happening: Series
     {
         public IWritableMediaCollection<VideoReference> VideoReferences { get; protected set; }

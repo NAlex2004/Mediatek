@@ -3,6 +3,9 @@ using LibMediatek.Interfaces;
 
 namespace LibMediatek.Classes.Factories
 {
+    /// <summary>
+    /// abstract factory class for IMediaCollection(s)
+    /// </summary>
     public abstract class MediaFactory
     {
         public abstract IMediaCollection<MusicTrack> CreateMusicTracks();

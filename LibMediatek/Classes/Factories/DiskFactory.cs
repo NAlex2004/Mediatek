@@ -4,6 +4,9 @@ using LibMediatek.Interfaces;
 
 namespace LibMediatek.Classes.Factories
 {
+    /// <summary>
+    /// Array based fixed non-changable media disk
+    /// </summary>
     public class DiskFactory : MediaFactory
     {
         private readonly MusicTrack[] _musicTracks;

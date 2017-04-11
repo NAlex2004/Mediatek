@@ -9,6 +9,9 @@ using LibMediatek.Classes.Collections;
 
 namespace LibMediatek.Classes.Factories
 {
+    /// <summary>
+    /// Like DiskFactory, array-based, but items can be changed by this[index]
+    /// </summary>
     public class SelectionFactory: MediaFactory
     {
         private readonly MusicTrack[] _musicTracks;
