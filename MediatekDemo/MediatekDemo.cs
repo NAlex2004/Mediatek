@@ -61,7 +61,7 @@ namespace MediatekDemo
 
         static void WriteMedia<T>(IMediaCollection<T> collection) where T: IMediaItem
         {
-            Console.WriteLine("  Collection: {0}<{1}>", collection.GetType().Name, typeof(T));
+            Console.WriteLine("  Collection: {0}<{1}>", collection.GetType().Name, typeof(T).Name);
             foreach (var item in collection)
                 Console.WriteLine(item.ToString());
             Console.WriteLine();
@@ -147,6 +147,27 @@ namespace MediatekDemo
         public static void HappeningDemo()
         {
             Happening happen = CreateHappening();
+            Console.WriteLine("================== Happening ======================");
+
+            WriteMedia(happen.Videos);
+            WriteMedia(happen.Images);
+            WriteMedia(happen.ImageReferences);
+            WriteMedia(happen.VideoReferences);
+            Console.WriteLine();
+
+            Console.WriteLine("Write videos sorted by title:");
+
+            happen.Videos.OrderBy(x => x.Title).ForEach(x => Console.WriteLine(x.ToString()));
+
+            happen.ImageReferences.Reset();
+            happen.ImageReferences.MoveNext();
+            happen.ImageReferences.MoveNext();
+            happen.ImageReferences.MovePrevious();
+            Console.WriteLine("ImageReferences MoveNext, MoveNext, MovePrevious, Current:");
+            Console.WriteLine(happen.ImageReferences.Current);
+
+            Console.WriteLine("===============================================");
+
         }
     }
 }

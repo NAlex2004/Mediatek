@@ -8,7 +8,7 @@ namespace LibMediatek.Classes.Collections.Abstract
     public abstract class MediaCollection<T> : IMediaCollection<T>, IUpdatableMediaCollection<T> where T : IMediaItem
     {
         protected int Index = -1;
-        public virtual int CountItems { get; protected set; }
+        public abstract int CountItems { get; protected set; }
 
         public abstract IEnumerator<T> GetEnumerator();
 

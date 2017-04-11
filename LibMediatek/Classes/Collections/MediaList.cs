@@ -92,5 +92,17 @@ namespace LibMediatek.Classes.Collections
         {
             return Items.Where(searchFunc);
         }
+
+        public override int CountItems
+        {
+            get
+            {
+                return Items.Count;
+            }
+            protected set
+            {
+                
+            }
+        }
     }
 }

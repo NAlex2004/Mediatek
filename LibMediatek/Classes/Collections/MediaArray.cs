@@ -17,7 +17,10 @@ namespace LibMediatek.Classes.Collections
 
         public MediaArray(T[] tracks)
         {
-            Tracks = tracks;
+            if (tracks != null)
+                Tracks = tracks;
+            else
+                Tracks = new T[1];
         }
 
         public override IEnumerator<T> GetEnumerator()
@@ -47,6 +50,18 @@ namespace LibMediatek.Classes.Collections
         public override IEnumerable<T> Find(Func<T, bool> searchFunc)
         {
             return Tracks.Where(searchFunc);
+        }
+
+        public override int CountItems
+        {
+            get
+            {
+                return Tracks.Length;
+            }
+            protected set
+            {
+                
+            }
         }
     }
 }
