@@ -65,7 +65,7 @@ namespace MediatekDemo
         public void DiskDemo(bool changable = false)
         {
             Console.WriteLine("================== {0} ======================", (changable ? "Selection" : "  Disk "));
-            Disk disk = changable ? mediatek.Disks.ElementAt(0) : mediatek.Selections.ElementAt(0);            
+            Disk disk = changable ? mediatek.Selections.ElementAt(0) : mediatek.Disks.ElementAt(0);            
             WriteMedia(disk.Images);
             WriteMedia(disk.MusicTracks);
                         
