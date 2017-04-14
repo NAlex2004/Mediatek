@@ -6,7 +6,7 @@ using System.IO;
 
 namespace LibMediatek.Interfaces
 {
-    interface IMediaPlayer
+    public interface IMediaPlayer
     {
         void Play(Stream stream);
     }

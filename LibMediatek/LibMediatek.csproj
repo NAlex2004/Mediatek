@@ -42,10 +42,12 @@
     <Compile Include="Classes\Collections\Abstract\WritableMediaCollection.cs" />
     <Compile Include="Classes\Collections\Selection.cs" />
     <Compile Include="Classes\Collections\Series.cs" />
+    <Compile Include="Classes\Collections\SimpleMediatek.cs" />
     <Compile Include="Classes\Collections\UpdatableMediaArray.cs" />
     <Compile Include="Classes\Factories\DiskFactory.cs" />
     <Compile Include="Classes\Factories\ListMediaFactory.cs" />
     <Compile Include="Classes\Factories\MediaFactory.cs" />
+    <Compile Include="Classes\Factories\MediatekFactory.cs" />
     <Compile Include="Classes\Factories\SelectionFactory.cs" />
     <Compile Include="Classes\Factories\WritableMediaFactory.cs" />
     <Compile Include="Classes\Items\MediaItem.cs" />
@@ -58,6 +60,7 @@
     <Compile Include="Classes\SimpleMediaPlayer.cs" />
     <Compile Include="Interfaces\IMediaCollection.cs" />
     <Compile Include="Interfaces\IMediaPlayer.cs" />
+    <Compile Include="Interfaces\IMediatek.cs" />
     <Compile Include="Interfaces\IUpdatableMediaCollection.cs" />
     <Compile Include="Interfaces\IWritableMediaCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
