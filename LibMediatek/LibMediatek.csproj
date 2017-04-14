@@ -55,7 +55,9 @@
     <Compile Include="Classes\Items\PhotoReference.cs" />
     <Compile Include="Classes\Items\Video.cs" />
     <Compile Include="Classes\Items\VideoReference.cs" />
+    <Compile Include="Classes\SimpleMediaPlayer.cs" />
     <Compile Include="Interfaces\IMediaCollection.cs" />
+    <Compile Include="Interfaces\IMediaPlayer.cs" />
     <Compile Include="Interfaces\IUpdatableMediaCollection.cs" />
     <Compile Include="Interfaces\IWritableMediaCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

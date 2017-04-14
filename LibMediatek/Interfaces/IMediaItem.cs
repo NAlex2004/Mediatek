@@ -1,13 +1,16 @@
 ﻿using System;
+using System.IO;
 
 namespace LibMediatek.Interfaces
 {
 	public interface IMediaItem
 	{
-	    int? Id { get; }
+		int? Id { get; }
 		string Title { get; }
 		string Author { get; }
-	    bool Open();
+		[Obsolete]
+		bool Open();
+		Stream GetContent();
 	}
 }
 
