@@ -24,6 +24,7 @@ namespace LibMediatek.Classes.Collections
             Happenings = factory.CreateHappenings();
             Series = factory.CreateSeries();
             Selections = factory.CreateSelections();
+            Player = factory.CreatePlayer();
         }
 
         public ICollection<Photo> Photoes

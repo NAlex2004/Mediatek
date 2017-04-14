@@ -7,7 +7,7 @@ using System.IO;
 
 namespace LibMediatek.Classes
 {
-    class SimpleMediaPlayer : IMediaPlayer
+    public class SimpleMediaPlayer : IMediaPlayer
     {
         public void Play(Stream stream)
         {

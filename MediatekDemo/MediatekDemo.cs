@@ -10,53 +10,13 @@ using LibMediatek.Classes.Collections.Abstract;
 
 namespace MediatekDemo
 {
-    public static class MediatekDemo
+    public class MediatekDemo
     {
-        static void AddVideo(IWritableMediaCollection<Video> collection)
-        {
-            collection.Add(new Video("Video #1", "Noname", new byte[1]));
-            collection.Add(new Video("Video #3", "Noname", new byte[1]));
-            collection.Add(new Video("Video #2", "Unknown", new byte[1]));
-            collection.Add(new Video("Video #4", "Unknown", new byte[1]));
-        }
+        private IMediatek mediatek;
 
-        static void AddImages(IWritableMediaCollection<Photo> collection)
+        public MediatekDemo(IMediatek mediatek)
         {
-            collection.Add(new Photo("Empty picture", "Bare Eye", new System.Drawing.Bitmap(1, 1)));
-            collection.Add(new Photo("Some Photo", "google", new System.Drawing.Bitmap(1, 1)));
-        }
-
-        static void AddVideoReferences(IWritableMediaCollection<VideoReference> collection)
-        {
-            collection.Add(new VideoReference("Video Ref #1", "Ref", new Uri("file://file.avi")));
-            collection.Add(new VideoReference("Video Ref #2", "Ref", new Uri("file://file2.avi")));
-        }
-
-        static void AddImageReferences(IWritableMediaCollection<PhotoReference> collection)
-        {
-            collection.Add(new PhotoReference("Empty reference", "google", new Uri("https://nothing.com/empty.jpg")));
-            collection.Add(new PhotoReference("Some reference", "google", new Uri("https://vignette3.wikia.nocookie.net/uncyclopedia/images/b/b7/Press_any_key.jpg")));
-        }
-
-        static Series CreateSeries()
-        {
-            ListMediaFactory sFact = new ListMediaFactory();
-            Series series = new Series(sFact);
-            AddVideo(series.Videos);
-            AddImages(series.Images);
-            AddImageReferences(series.Images);
-            return series;
-        }
-
-        static Happening CreateHappening()
-        {
-            ListMediaFactory sFact = new ListMediaFactory();
-            Happening happen = new Happening(sFact);
-            AddVideo(happen.Videos);
-            AddVideoReferences(happen.VideoReferences);
-            AddImages(happen.Images);
-            AddImageReferences(happen.ImageReferences);
-            return happen;
+            this.mediatek = mediatek;
         }
 
         static void WriteMedia<T>(IMediaCollection<T> collection) where T: IMediaItem
@@ -67,9 +27,9 @@ namespace MediatekDemo
             Console.WriteLine();
         }
 
-        public static void SeriesDemo()
+        public void SeriesDemo()
         {
-            Series series = CreateSeries();
+            Series series = mediatek.Series.ElementAt(0);
             Console.WriteLine("================== Series ======================");
             
             WriteMedia(series.Videos);
@@ -84,7 +44,8 @@ namespace MediatekDemo
             Console.WriteLine("  Result:");
             WriteMedia(series.Videos);
             Console.WriteLine("__Open Video[1]: ");
-            series.Videos[1].Open();
+            mediatek.Player.Play(series.Videos[1].GetContent());
+            //series.Videos[1].Open();
 
             Console.WriteLine("remove first image");
             Photo p = series.Images[0];
@@ -94,39 +55,17 @@ namespace MediatekDemo
             Console.WriteLine("===============================================");
         }
 
-        static MediaFactory CreateDiskFactory(bool changable = false)
-        {
-            MusicTrack[] tracks = new MusicTrack[] 
-            {
-                new MusicTrack("Music Track 1", "Noone", new byte[1]),
-                new MusicTrack("Music Track 2", "Someone", new byte[1]),
-                new MusicTrack("Music Track 3", "Noone", new byte[1])
-            };
+        
 
-            Photo[] photoes = new Photo[]
-            {
-                new Photo("Photo 1", "Some author", new System.Drawing.Bitmap(1, 1)),
-                new Photo("Photo 2", "No author", new System.Drawing.Bitmap(1, 1)),
-                new PhotoReference("Photo 3", "Some author", new Uri("file:///nothing.bmp"))
-            };
-
-            MediaFactory factory;
-            if (changable)
-                factory = new SelectionFactory(tracks, photoes);
-            else
-                factory = new DiskFactory(tracks, photoes);
-            return factory;
-        }
-
-        public static void SelectionDemo()
+        public void SelectionDemo()
         {
             DiskDemo(true);
         }
 
-        public static void DiskDemo(bool changable = false)
+        public void DiskDemo(bool changable = false)
         {
             Console.WriteLine("================== {0} ======================", (changable ? "Selection" : "  Disk "));
-            Disk disk = new Disk(CreateDiskFactory(changable));
+            Disk disk = changable ? mediatek.Disks.ElementAt(0) : mediatek.Selections.ElementAt(0);            
             WriteMedia(disk.Images);
             WriteMedia(disk.MusicTracks);
                         
@@ -137,16 +76,16 @@ namespace MediatekDemo
             Console.WriteLine(" Open all photoes:");
             foreach (var photo in disk.Images)
             {
-                photo.Open();                
+                mediatek.Player.Play(photo.GetContent());
             }
             Console.WriteLine("==============================================");
         }
 
 
 
-        public static void HappeningDemo()
+        public void HappeningDemo()
         {
-            Happening happen = CreateHappening();
+            Happening happen = mediatek.Happenings.ElementAt(0);
             Console.WriteLine("================== Happening ======================");
 
             WriteMedia(happen.Videos);

@@ -24,13 +24,15 @@ namespace MediatekDemo
 
         static void Main(string[] args)
         {
-            MediatekDemo.DiskDemo();
+            IMediatek mediatek = new SimpleMediatek(new TestMediatekFactory());
+            MediatekDemo demo = new MediatekDemo(mediatek);
+            demo.DiskDemo();
             AnyKey();
-            MediatekDemo.SelectionDemo();
+            demo.SelectionDemo();
             AnyKey();
-            MediatekDemo.SeriesDemo();
+            demo.SeriesDemo();
             AnyKey();
-            MediatekDemo.HappeningDemo();
+            demo.HappeningDemo();
             Console.ReadKey();
         }
     }
